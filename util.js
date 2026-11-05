@@ -20,15 +20,19 @@ function analizarPaquetes(caso){
             consolidados.set(packageId,{ destination:destination,weight:weight,timestamp:timestamp });
         }else{
             const fichaGuardada = consolidados.get(packageId);
-            if(timestamp>=fichaGuardada.timestamp){
+            if(timestamp >= fichaGuardada.timestamp){
                 consolidados.set(packageId,{ destination:destination,weight:weight,timestamp:timestamp })
             }
         }
-        //console.log(packageId, destination, weight, timestamp);
-       
-
     }
-    console.log(consolidados)
+    
+    const ciudades = new Map();
+    for (let i = 0; i< destinos.length ; i++){
+        ciudades.set(destinos[i],{totalPackages:0, totalWeight:0});
+    }
+    console.log(ciudades)
+    //console.log(packageId, destination, weight, timestamp);
+    //console.log(consolidados)
     return "";
 }
 
