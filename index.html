@@ -2,15 +2,33 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Análisis de paquetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de paquetes en un centro de distribución</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Análisis de paquetes en un centro de distribución</h1>
-    <textarea id="entrada" rows="8" cols="80"></textarea>
-    <br />
-    <button id="btnProcesar">Procesar</button>
-    <pre id="resultado"></pre>
+    <main class="contenedor">
+      <h1>Análisis de paquetes en un centro de distribución</h1>
+      <p class="descripcion">
+        Ingrese los destinos y registros de paquetes en el formato
+        <code>destinos--registros</code> y presione <strong>Procesar</strong>.
+      </p>
+
+      <label for="entrada">Entrada de datos:</label>
+      <textarea
+        id="entrada"
+        rows="8"
+        placeholder="Ejemplo: North,South,East--P1 North 10 Received 10;..."
+      ></textarea>
+
+      <div class="acciones">
+        <button id="btnProcesar" type="button">Procesar</button>
+        <button id="btnLimpiar" type="button" class="secundario">Limpiar</button>
+      </div>
+
+      <h2>Resultado (Ranking de destinos)</h2>
+      <pre id="resultado"></pre>
+    </main>
 
     <script src="util.js"></script>
     <script src="app.js"></script>
